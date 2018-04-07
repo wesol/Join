@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"> 
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Error</title>
+<title>Login</title>
 </head>
 <header>
 	<div th:replace="parts/header :: header"></div>
 </header>
 <body>
-	<h1>Something was getting wrong</h1>
-	<form>
-		<input type="button" value="Go back!" onclick="history.back()"/>
-		
-	</form>
-	<br/>
+
+	<h1>Login</h1>
+	<p>Login, if you do not have an account register</p>
+	<a href="/registration">Registration</a>
 </body>
 <footer>
 	<div th:replace="parts/footer :: footer"></div>

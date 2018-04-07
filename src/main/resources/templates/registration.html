@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Registration</title>
+</head>
+<header>
+	<div th:replace="parts/header :: header"></div>
+</header>
+<body>
+
+	<h1>Registration</h1>
+	<form th:action = "@{/registration}" th:object = "${user}" method = "post">
+		<div>
+			<br/>
+			<label for="name">First name*</label>
+			<br/>
+			<label th:if = "${#fields.hasErrors('name')}" th:errors="*{name}" class = "validation-message"></label>
+			<br/>
+			<input type="text" id="name" th:field="*{name}" placeholder="Enter fist name" class="form-control" />
+		</div>
+		<div>
+			<br/>
+			<label for="last">Last name*</label>
+			<br/>
+			<label th:if = "${#fields.hasErrors('last')}" th:errors="*{last}" class = "validation-message"></label>
+			<br/>
+			<input type="text" id="last" th:field="*{last}" placeholder="*Enter last name" class="form-control" />
+		</div>
+		<div>
+			<br/>
+			<label for="email">Email*</label>
+			<br/>
+			<label th:if = "${#fields.hasErrors('email')}" th:errors="*{email}" class = "validation-message"></label>
+			<br/>
+			<input type="text" id="email" th:field="*{email}" placeholder="Enter email" class="form-control" />
+		</div>
+		<div>
+			<br/>
+			<label for="password">Password* (at least 4 characters)</label>
+			<br/>
+			<label th:if = "${#fields.hasErrors('password')}" th:errors="*{password}" class = "validation-message"></label>
+			<br/>
+			<input type="text" id="password" th:field="*{password}" placeholder="Enter password" class="form-control" />
+		</div>
+		<div>
+			<br/>
+			<label for="phone">Phone number</label>
+			<br/>
+			<input type="tel" id="phone" th:field="*{phone}" placeholder="Enter phone number" class="form-control" />
+		</div>
+		<div>
+			<br/>
+			<label for="skype">Skype login</label>
+			<br/>
+			<input type="text" id="skype" th:field="*{skype}" placeholder="Enter skype login" class="form-control" />
+		</div>
+		<input type="submit" value="Send"/>
+	</form>
+
+</body>
+<footer>
+	<div th:replace="parts/footer :: footer"></div>
+</footer>
+</html>
