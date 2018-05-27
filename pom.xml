@@ -3,19 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mw</groupId>
-	<artifactId>MeetingPortal</artifactId>
+	<groupId>com.join</groupId>
+	<artifactId>Join</artifactId>
 	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>MeetingPortal</name>
-	<description>Portal for arranging meetings</description>
+	<name>Join</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 	<properties>
@@ -57,7 +56,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -69,4 +73,5 @@
 	</build>
 
 
+	<description>Join and learn or buy</description>
 </project>

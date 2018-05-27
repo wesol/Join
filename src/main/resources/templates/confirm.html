@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<div th:replace="parts/styleAndOther :: head"></div>
+<title>Confirmation</title>
+</head>
+<header>
+	<div th:replace="parts/header :: header"></div>
+</header>
+<body>
+	<h1 th:text="${info}"></h1>
+	<form method="get" action="/login">
+		<button type="submit">Login</button>
+	</form>
+</body>
+<footer>
+	<div th:replace="parts/footer :: footer"></div>
+</footer>
+</html>

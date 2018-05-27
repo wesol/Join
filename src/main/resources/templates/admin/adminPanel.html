@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"> 
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
-<title>Admin</title>
-
-<div th:replace="parts/header::head"></div>
+<div th:replace="parts/styleAndOther :: head"></div>
+<title>Administrator Panel</title>
 </head>
+<header>
+	<div th:replace="parts/header :: header"></div>
+</header>
 <body>
-	<h1>Administrator panel</h1>
-	<p>Administrator</p>
-	
+
+	<h1>Admin</h1>
+	<p>Administrator Panel</p>
 
 </body>
+<footer>
+	<div th:replace="parts/footer :: footer"></div>
+</footer>
 </html>
