@@ -34,7 +34,7 @@ public class UserService {
 			return "You have wrong link";
 		user.setActivated(true);
 		userRepository.save(user);
-		return "Gratulations! You activated account successfully " + user.isActivated();
+        return "Gratulations! You activated account successfully ";
 
 	}
 

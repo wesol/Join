@@ -12,6 +12,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.beans.factory.annotation.Value;
 
 @Entity
 public class User {
@@ -19,9 +20,9 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String configurationId;
-	
+
 	@NotEmpty(message = "{com.join.notEmpty}")
 	private String name;
 
@@ -40,11 +41,8 @@ public class User {
 	@NotEmpty(message = "{com.join.notEmpty}")
 	private String skype;
 
-	@ColumnDefault(value = "false")
-	private boolean admin;
-
-	@ColumnDefault(value = "false")
-	private boolean employee;
+	@ColumnDefault(value = "'user'")
+	private String role;
 
 	@ColumnDefault(value = "false")
 	private boolean activated;
@@ -77,20 +75,12 @@ public class User {
 		this.last = last;
 	}
 
-	public boolean isEmployee() {
-		return employee;
+	public String getRole() {
+		return role;
 	}
 
-	public void setEmployee(boolean employee) {
-		this.employee = employee;
-	}
-
-	public boolean isAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(boolean admin) {
-		this.admin = admin;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getEmail() {
@@ -156,7 +146,7 @@ public class User {
 	public void setConfigurationId(String configurationId) {
 		this.configurationId = configurationId;
 	}
-	
+
 	public User() {
 	}
 
@@ -171,8 +161,7 @@ public class User {
 	}
 
 	public User(Long id, String configurationId, String name, String last, String email, String password, String phone,
-			String skype, boolean admin, boolean employee, boolean activated, LocalDateTime regDate,
-			LocalDateTime lastLogDate) {
+				String skype, String role, boolean activated, LocalDateTime regDate, LocalDateTime lastLogDate) {
 		this.id = id;
 		this.configurationId = configurationId;
 		this.name = name;
@@ -181,8 +170,7 @@ public class User {
 		this.password = password;
 		this.phone = phone;
 		this.skype = skype;
-		this.admin = admin;
-		this.employee = employee;
+		this.role = role;
 		this.activated = activated;
 		this.regDate = regDate;
 		this.lastLogDate = lastLogDate;
@@ -190,11 +178,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", last=" + last + ", email=" + email + ", password=" + password
-				+ ", phone=" + phone + ", skype=" + skype + ", admin=" + admin + ", employee=" + employee
-				+ ", activated=" + activated + ", regDate=" + regDate + ", lastLogDate=" + lastLogDate + "]";
+		return "User [id=" + id + ", configurationId=" + configurationId + ", name=" + name + ", last=" + last
+				+ ", email=" + email + ", password=" + password + ", phone=" + phone + ", skype=" + skype + ", role="
+				+ role + ", activated=" + activated + ", regDate=" + regDate + ", lastLogDate=" + lastLogDate + "]";
 	}
-
-	
 
 }
